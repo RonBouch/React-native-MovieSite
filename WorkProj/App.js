@@ -27,7 +27,7 @@ import {
 const App = () => {
   return (
 <View>
-  <Text>Hello</Text>
+  <Text>Hevllo</Text>
 </View>
   );
 };
