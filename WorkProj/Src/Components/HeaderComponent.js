@@ -5,13 +5,18 @@ import {TouchableOpacity} from 'react-native';
 import StyleSheet from '../Components/StyleSheet.js'
 
 export default class HeaderComponent extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+  
   render() {
     return (
       <Container style={StyleSheet.header}>
         <Header>
           <Left>
             <TouchableOpacity transparent>
-              <Icon name='arrow-left' type="font-awesome"size={20} />
+              <Icon name='arrow-left' type="font-awesome"size={20} onPress={()=>this.props.navigation.goBack()} />
             </TouchableOpacity>
           </Left>
           <Body>

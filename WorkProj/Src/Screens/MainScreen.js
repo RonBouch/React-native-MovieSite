@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import StyleSheet from '../Components/StyleSheet.js'
 import HeaderComponent from '../Components/HeaderComponent'
+import FooterComponent from '../Components/FooterComponent'
 
 import {
     SafeAreaView,
@@ -9,7 +10,9 @@ import {
     Text,
     StatusBar,
     Button,
+    TouchableOpacity
   } from 'react-native';
+import { Footer } from 'native-base';
   
 export default class MainScreen extends React.Component {
     constructor(props) {
@@ -19,9 +22,11 @@ export default class MainScreen extends React.Component {
     
     render() {
         return (
-            <View>
+            
+              
+              <View style={StyleSheet.container}>
               <HeaderComponent/>
-              <View style={{flex:5}}>
+              <View style={StyleSheet.body}>
               <Text>
                     Hello MainScreen
                 </Text>
@@ -31,11 +36,10 @@ export default class MainScreen extends React.Component {
                 </Text>
                 <Button title="ShowScreen" onPress={()=>this.props.navigation.navigate('ShowScreen')} style={{}}/>
 
-              </View>
-              
-                </View>
-                
-
+              </View>      
+              </View>   
+           <FooterComponent />
+      
             </View>
         )
     }

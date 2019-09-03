@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import StyleSheet from '../Components/StyleSheet.js'
 import HeaderComponent from '../Components/HeaderComponent'
+import FooterComponent from '../Components/FooterComponent'
+
 import {
     SafeAreaView,
-    StyleSheet,
     ScrollView,
     View,
     Text,
@@ -10,19 +12,37 @@ import {
     Button,
     TouchableOpacity
   } from 'react-native';
+import { Footer } from 'native-base';
   
-export default class ShowScreen extends Component {
+export default class ShowScreen extends React.Component {
+    constructor(props) {
+        super(props);
+
+    }
+    
     render() {
         return (
-           <View>
-               <HeaderComponent/>
-               <Text>Hello ShowScreen</Text>
-               <Button title="MainScreen" onPress={()=>this.props.navigation.navigate('MainScreen')} style={{ height:'50%', width:10}}/>
-               <TouchableOpacity
-                onPress={()=>this.props.navigation.navigate('MainScreen')}>
-                   <Text>CLick me</Text>
-               </TouchableOpacity>
-           </View>
+            
+              
+              <View style={StyleSheet.container}>
+              <HeaderComponent/>
+              <View style={StyleSheet.body}>
+              <Text>
+                    Hello ShowScreen
+                </Text>
+                <View>
+                <Text>
+                    To Main Screen -> :
+                </Text>
+                <Button title="ShowScreen" onPress={()=>this.props.navigation.navigate('MainScreen')} style={{}}/>
+
+              </View>      
+              </View>   
+           <FooterComponent />
+      
+            </View>
         )
     }
 }
+
+  
