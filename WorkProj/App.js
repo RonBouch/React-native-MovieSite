@@ -1,11 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
 
+import {createSwitchNavigator,createAppContainer} from 'react-navigation'
 import React, {Fragment} from 'react';
 import {
   SafeAreaView,
@@ -14,34 +8,35 @@ import {
   View,
   Text,
   StatusBar,
+  Button
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import MainScreen from './Src/Screens/MainScreen';
+import ShowScreen from './Src/Screens/ShowScreen';
 
-const App = () => {
-  return (
-<View>
-  <Text>Hevllo</Text>
-</View>
-  );
-};
+class App extends React.Component{
+  render(){
+    return <AppContainer/>;
+  }
+}
+export default App;
+
+const AppSwitchNavigator = createSwitchNavigator({
+  ShowScreen:{screen:ShowScreen},
+
+  MainScreen:{screen:MainScreen},
+
+}); 
+const AppContainer = createAppContainer(AppSwitchNavigator);
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
   },
   engine: {
     position: 'absolute',
     right: 0,
   },
   body: {
-    backgroundColor: Colors.white,
   },
   sectionContainer: {
     marginTop: 32,
@@ -50,19 +45,16 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
-    color: Colors.black,
   },
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
-    color: Colors.dark,
   },
   highlight: {
     fontWeight: '700',
   },
   footer: {
-    color: Colors.dark,
     fontSize: 12,
     fontWeight: '600',
     padding: 4,
@@ -71,4 +63,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
