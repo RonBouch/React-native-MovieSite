@@ -22,9 +22,10 @@ class App extends React.Component{
 export default App;
 
 const AppSwitchNavigator = createSwitchNavigator({
+  MainScreen:{screen:MainScreen},
+
   ShowScreen:{screen:ShowScreen},
 
-  MainScreen:{screen:MainScreen},
 
 }); 
 const AppContainer = createAppContainer(AppSwitchNavigator);

@@ -8,36 +8,55 @@ export default StyleSheet.create({
     resizeMode: "cover"
   },
   header:{
+
       width:'100%',
-      height:'10%',
-      flex:1
+
   },
-  logo: {
-    alignItems: "center",
-    marginTop: "15%",
-    width: "90%",
-    height: "30%"
+  footer : {
+    position:'absolute',
+    width:'100%',
+    bottom: 0,
+    backgroundColor: "rgba(255,255,255,.5)",
+     backgroundColor:'yellow',
+    alignItems:'center'
+
+  },
+
+  card: {
+    marginTop: 20,
+       height:'40%',
+      justifyContent:'center',
+      alignItems: "center",
+       width: "80%",
+       backgroundColor:'brown',
+       padding:'10%'
+  },
+  card2: {
+       height:'50%',
+      justifyContent:'center',
+      alignItems: "center",
+       width: "100%",
+       backgroundColor:'brown',
+  },
+  titleAndRating:{
+    width: "80%",
+    height:'10%',
+    backgroundColor:'red',
+    marginTop: 20
+
   },
   container: {
-    flex: 1,
+    backgroundColor:'skyblue',
     flexDirection: "column",
     alignItems: "center",
-    paddingLeft: "10%",
-    paddingRight: "10%",
-    width: "100%",
     height: "100%"
   },
-  main: {
-    backgroundColor: "rgba(255,255,255,.7)",
-    alignItems: "center",
-    width: "100%",
-    height: "100%"
-  },
+
 
   
   input: {
     flexDirection: "row",
-    backgroundColor: "rgba(255,255,255,.5)",
+    // backgroundColor: "rgba(255,255,255,.5)",
     borderRadius: 50,
     width: 250,
     height: 40,
