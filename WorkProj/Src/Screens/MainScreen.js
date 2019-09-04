@@ -12,6 +12,7 @@ import {
     Button,
     TouchableOpacity
   } from 'react-native';
+import { Footer } from 'native-base';
   
 export default class MainScreen extends React.Component {
     constructor(props) {
