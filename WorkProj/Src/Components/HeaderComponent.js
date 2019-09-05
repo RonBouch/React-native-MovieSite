@@ -20,17 +20,14 @@ export default class HeaderComponent extends Component {
         <Header>
           <Left>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('MainScreen')}>
-              <Icon name='arrow-left' type="font-awesome"size={20}  />
+              <Icon name='home' type="font-awesome"size={24}  />
             </TouchableOpacity>
           </Left>
           <Body>
             <Title>Header</Title>
           </Body>
           <Right>
-            <TouchableOpacity 
-            onPress={() => alert('Rob')}>
-              <Icon name='bars' type="font-awesome" size={20} />
-            </TouchableOpacity>
+            
           </Right>
         </Header>
       </Container>

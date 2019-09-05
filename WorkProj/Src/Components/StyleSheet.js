@@ -4,32 +4,29 @@ export default StyleSheet.create({
   //Basic Design
 
   backgroundImage: {
-    flex: 1,
     resizeMode: "cover"
   },
   header:{
-
       width:'100%',
-
   },
   footer : {
     position:'absolute',
     width:'100%',
     bottom: 0,
     backgroundColor: "rgba(255,255,255,.5)",
-     backgroundColor:'yellow',
     alignItems:'center'
 
   },
-
   card: {
-    marginTop: 20,
-       height:'40%',
+    marginTop: 10,
+    // flex:3,
+       height:'60%',
       justifyContent:'center',
       alignItems: "center",
        width: "80%",
-       backgroundColor:'brown',
-      //  padding:'10%'
+      
+       borderWidth:2,
+       backgroundColor: "rgba(255,255,255,.5)",
   },
   card2: {
        height:'50%',
@@ -40,31 +37,35 @@ export default StyleSheet.create({
   },
   titleAndRating:{
     width: "80%",
-    height:'10%',
-    backgroundColor:'red',
-    marginTop: 20
-
+    height:'8%',
+    backgroundColor: "rgba(255,255,255,.5)",
+    marginTop: 10,
+    alignContent:'center',
+    alignItems:'center'
+  },
+  show:{
+    width:'100%',
+    flex:1,
+    flexDirection: "row",
+  backgroundColor: "rgba(255,255,255,.4)",
+  borderWidth:1,
   },
   container: {
-    backgroundColor:'skyblue',
     flexDirection: "column",
     alignItems: "center",
     height: "100%"
   },
-
-
-  
-  input: {
-    flexDirection: "row",
-    // backgroundColor: "rgba(255,255,255,.5)",
-    borderRadius: 50,
-    width: 250,
-    height: 40,
-    textAlign: "center",
-    borderColor: "gray",
-    borderWidth: 2,
-    margin: 5
+  image:{
+    width:100,
+    height:100,
+    margin:5
   },
+  headerView:{
+    height:'10%',
+    width:'100%'
+  },
+
+
 
  
 });

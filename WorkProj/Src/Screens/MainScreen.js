@@ -13,7 +13,8 @@ import {
     TouchableOpacity,
     FlatList,
     Image,
-    Dimensions
+    Dimensions,
+    ImageBackground
     
   } from 'react-native';
 import { Footer } from 'native-base';
@@ -25,24 +26,25 @@ export default class MainScreen extends React.Component {
         this.state={
         shows:[],
         screenHeight: 0,
-
+        show:"",
         }
     }
-    // renderItem=({item})=>{
-    //     console.log(item)
-    //     return(
-    //  <View>
-    //      {/* <Image style={{width:100,height:100}} 
-    //      source={{uri:item.image}}/> */}
-    //      <Text style={{color:'black',fontSize:16}}>zXZX:{item}{item.name}</Text>
-    //  </View>
-    //     )
-    // }
+    static navigationOptions={
+        title:'Main Screen',
+    };
+
+
     onContentSizeChange = (contentWidth, contentHeight) => {
         this.setState({ screenHeight: contentHeight });
       };
+      ShowWindow(show,index){
+      this.setState({
+          show:show
+      })
+      console.log("SHow"+this.state.show)
+      }
     componentDidMount(){
-        const url ='http://api.tvmaze.com/shows/3/episodes?specials=1'
+        const url ='http://api.tvmaze.com/people/1/castcredits?embed=show'
         fetch(url)
         .then((response)=>response.json())
         .then((responsJson)=>{
@@ -59,46 +61,50 @@ export default class MainScreen extends React.Component {
 
     }
     render() {
+        const {navigate}=this.props.navigation
         const scrollEnabled = this.state.screenHeight > height - 1000;
 
         let Shows = [];
         
         if (this.state.shows != null) {
           Shows = this.state.shows.map((show,index)=>{ 
-            console.log("image" + show.image.medium)
+            
+            console.log(show._embedded.show,)
+
             return (
               <View
               key={index}
-                style={{
-                    width:'100%',
-                  backgroundColor: "rgba(255,255,255,.4)"
-                }}
-              >
-                  <View style={{ flexDirection: "row",marginBottom:3 }}>
-                  <Image style={{width:100,height:100}} 
-                  source={{uri:String(show.image.medium)}}/>
+              onTouchEndCapture={() => navigate('ShowScreen',{prevScreenTitle:show._embedded.show}) }
+                style={StyleSheet.show}
+              >          
+                  <Image style={StyleSheet.image} 
+                  source={{uri:String(show._embedded.show.image.medium)}}/> 
+                  <View style={{marginLeft:5,flex:1,justifyContent:'center' }}>
                   <Text>
-                      Movie:{show.name}
+                      Movie:{show._embedded.show.name}
                   </Text>
                   </View>  
               </View>
             );
+            
           });
-        }    
+           
+    }
         console.log(this.state)
 
     
         return (
-            
+            <ImageBackground
+        source={{uri:'https://movietheaterprices.com/wp-content/uploads/2015/08/Movie-Background-MovieTheaterPrices.jpg'}}
+        style={StyleSheet.backgroundImage}
+      >
               <View style={StyleSheet.container}>
-              <View style={{height:'10%',width:'100%'}}>
+              <View style={StyleSheet.headerView}>
               <HeaderComponent/>
               </View>
-              <Text> Hello Main screen</Text>
-
              <View style={StyleSheet.card}>
              <ScrollView
-             style={{ marginBottom: "3%", marginTop: "2%" }}
+             style={{ width:'100%' }}
              scrollEnabled={scrollEnabled}
              onContentSizeChange={this.onContentSizeChange}>
               {Shows}
@@ -106,15 +112,15 @@ export default class MainScreen extends React.Component {
              
              </View>
              <View style={StyleSheet.titleAndRating}>
-             <Button title="ShowScreen" onPress={()=>this.props.navigation.navigate('ShowScreen')} style={{}}/>
-
+             <Text style={{fontSize:26,fontWeight: "bold",color:'brown'}}>Ron's-Movies</Text>
              </View>
              <View style={StyleSheet.titleAndRating}>
 
              </View>
               <FooterComponent />
             </View>
-        )
+            </ImageBackground>
+                    )
     }
 }
 

@@ -17,19 +17,23 @@ import { Footer } from 'native-base';
 export default class ShowScreen extends React.Component {
     constructor(props) {
         super(props);
+       this.state={
+        prevScreenTitle:this.props.navigation.state.params.prevScreenTitle,
 
+       }
     }
-    
+    static navigationOptions={
+        title:'Show Screen',
+    };
     render() {
-        var {navigate} = this.props.navigation.navigate;
 
         return (
             
               <View style={StyleSheet.container}>
-              <View style={{height:'10%',width:'100%'}}>
-              <HeaderComponent navigate={navigate}/>
+              <View style={StyleSheet.headerView}>
+              <HeaderComponent />
               </View>
-              <Text> Hello Show screen</Text>
+              <Text> {this.state.prevScreenTitle.name}</Text>
 
              <View style={StyleSheet.card2}>
              <Button title="MainScreen" onPress={()=>this.props.navigation.navigate('MainScreen')} style={{}}/>
