@@ -29,7 +29,7 @@ export default StyleSheet.create({
       alignItems: "center",
        width: "80%",
        backgroundColor:'brown',
-       padding:'10%'
+      //  padding:'10%'
   },
   card2: {
        height:'50%',

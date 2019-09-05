@@ -13,7 +13,7 @@ import {
 
 import MainScreen from './Src/Screens/MainScreen';
 import ShowScreen from './Src/Screens/ShowScreen';
-
+// import HeaderComponent from './Src/Components/HeaderComponents'
 class App extends React.Component{
   render(){
     return <AppContainer/>;
@@ -23,7 +23,6 @@ export default App;
 
 const AppSwitchNavigator = createSwitchNavigator({
   MainScreen:{screen:MainScreen},
-
   ShowScreen:{screen:ShowScreen},
 
 

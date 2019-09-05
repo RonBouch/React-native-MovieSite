@@ -21,11 +21,13 @@ export default class ShowScreen extends React.Component {
     }
     
     render() {
+        var {navigate} = this.props.navigation.navigate;
+
         return (
             
               <View style={StyleSheet.container}>
               <View style={{height:'10%',width:'100%'}}>
-              <HeaderComponent/>
+              <HeaderComponent navigate={navigate}/>
               </View>
               <Text> Hello Show screen</Text>
 
