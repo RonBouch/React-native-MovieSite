@@ -11,8 +11,8 @@ import {
   Button
 } from 'react-native';
 
-import MainScreen from './Src/Screens/MainScreen';
-import ShowScreen from './Src/Screens/ShowScreen';
+import MainScreen from '../Screens/MainScreen';
+import ShowScreen from '../Screens/ShowScreen';
 // import HeaderComponent from './Src/Components/HeaderComponents'
 class App extends React.Component{
   render(){
