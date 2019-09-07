@@ -44,7 +44,7 @@ export default class MainScreen extends React.Component {
       console.log("SHow"+this.state.show)
       }
     componentDidMount(){
-        const url ='http://api.tvmaze.com/people/1/castcredits?embed=show'
+        const url ='http://api.tvmaze.com/schedule'
         fetch(url)
         .then((response)=>response.json())
         .then((responsJson)=>{
@@ -69,19 +69,19 @@ export default class MainScreen extends React.Component {
         if (this.state.shows != null) {
           Shows = this.state.shows.map((show,index)=>{ 
             
-            console.log(show._embedded.show,)
+            console.log(show.show,)
 
             return (
               <View
               key={index}
-              onTouchEndCapture={() => navigate('ShowScreen',{prevScreenTitle:show._embedded.show}) }
+              onTouchEndCapture={() => navigate('ShowScreen',{prevScreenTitle:show}) }
                 style={StyleSheet.show}
               >          
                   <Image style={StyleSheet.image} 
-                  source={{uri:String(show._embedded.show.image.medium)}}/> 
+                  source={{uri:String(show.show.image.medium)}}/> 
                   <View style={{marginLeft:5,flex:1,justifyContent:'center' }}>
-                  <Text>
-                      Movie:{show._embedded.show.name}
+                  <Text style={StyleSheet.textS}>
+                      {show.show.name}
                   </Text>
                   </View>  
               </View>
@@ -99,7 +99,7 @@ export default class MainScreen extends React.Component {
         style={StyleSheet.backgroundImage}
       >
               <View style={StyleSheet.container}>
-              <View style={StyleSheet.headerView}>
+              <View style={StyleSheet.header}>
               <HeaderComponent/>
               </View>
              <View style={StyleSheet.card}>
@@ -112,7 +112,7 @@ export default class MainScreen extends React.Component {
              
              </View>
              <View style={StyleSheet.titleAndRating}>
-             <Text style={{fontSize:26,fontWeight: "bold",color:'brown'}}>Ron's-Movies</Text>
+             <Text style={{fontSize:26,fontWeight: "bold",color:'white'}}>Ron's-Movies</Text>
              </View>
              <View style={StyleSheet.titleAndRating}>
 

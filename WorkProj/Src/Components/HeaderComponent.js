@@ -3,6 +3,7 @@ import { Container, Header, Left, Body, Right, Title } from 'native-base';
 import Icon from "react-native-vector-icons/FontAwesome";
 import {TouchableOpacity,Text,View,Dimensions} from 'react-native';
 import StyleSheet from '../Components/StyleSheet.js'
+import { WebView } from 'react-native-webview';
 
 export default class HeaderComponent extends Component {
   constructor(props) {
@@ -19,15 +20,15 @@ export default class HeaderComponent extends Component {
       <Container style={StyleSheet.header}>
         <Header>
           <Left>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('MainScreen')}>
+            {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('MainScreen')}>
               <Icon name='home' type="font-awesome"size={24}  />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </Left>
           <Body>
-            <Title>Header</Title>
+            <Title>Moon-site</Title>
           </Body>
           <Right>
-            
+         
           </Right>
         </Header>
       </Container>

@@ -6,9 +6,7 @@ export default StyleSheet.create({
   backgroundImage: {
     resizeMode: "cover"
   },
-  header:{
-      width:'100%',
-  },
+ 
   footer : {
     position:'absolute',
     width:'100%',
@@ -29,15 +27,23 @@ export default StyleSheet.create({
        backgroundColor: "rgba(255,255,255,.5)",
   },
   card2: {
-       height:'50%',
+       height:'40%',
       justifyContent:'center',
       alignItems: "center",
        width: "100%",
-       backgroundColor:'brown',
+       backgroundColor: "rgba(255,255,255,.5)",
   },
   titleAndRating:{
     width: "80%",
     height:'8%',
+    backgroundColor: "rgba(255,255,255,.5)",
+    marginTop: 10,
+    alignContent:'center',
+    alignItems:'center'
+  },
+  aboutMovie:{
+    width: "80%",
+    height:'20%',
     backgroundColor: "rgba(255,255,255,.5)",
     marginTop: 10,
     alignContent:'center',
@@ -60,11 +66,37 @@ export default StyleSheet.create({
     height:100,
     margin:5
   },
+  imageShow:{
+    width:200,
+    height:200,
+    margin:5
+  },
   headerView:{
     height:'10%',
-    width:'100%'
+    width:'100%',
+    alignContent:'center',
+    alignItems:'center',
+    justifyContent:'center',
+    
+    marginLeft:10,
+    flexDirection:'row-reverse'
   },
-
+  header:{
+    width:'100%',
+    height:'10%'
+},
+  textS:{
+    fontSize:16,
+    // fontWeight: "bold",
+    color:'black'
+  },
+  textAvg:{
+    fontSize:16,
+    fontWeight: "bold",
+    color:'black',
+    justifyContent:'center',
+    alignItems:'center'
+  }
 
 
  
