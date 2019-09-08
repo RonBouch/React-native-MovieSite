@@ -20,9 +20,7 @@ export default class HeaderComponent extends Component {
       <Container style={StyleSheet.header}>
         <Header>
           <Left>
-            {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('MainScreen')}>
-              <Icon name='home' type="font-awesome"size={24}  />
-            </TouchableOpacity> */}
+          
           </Left>
           <Body>
             <Title>Moon-site</Title>
